@@ -1,0 +1,64 @@
+table DimRoute
+	lineageTag: 5adc19e2-adb8-440f-96fc-4276b1cc01a6
+
+	column RouteKey
+		dataType: int64
+		isHidden
+		lineageTag: 2da676d7-8179-4bfb-9a08-0431fd121a3a
+		summarizeBy: none
+		sourceColumn: RouteKey
+
+	column Route
+		dataType: string
+		lineageTag: 530aea90-de77-4a83-a6e9-6de462b36cde
+		summarizeBy: none
+		sourceColumn: Route
+
+	column Origin
+		dataType: string
+		lineageTag: bdbcf3ff-72f1-4ea7-a010-b2a845bac429
+		summarizeBy: none
+		sourceColumn: Origin
+
+	column Dest
+		dataType: string
+		lineageTag: fb3bcd87-1445-431a-a5ed-427d0558a41a
+		summarizeBy: none
+		sourceColumn: Dest
+
+	column OriginAirportKey
+		dataType: int64
+		isHidden
+		lineageTag: 344a7e4e-2b2e-44bf-9059-26b4b31e8ab5
+		summarizeBy: none
+		sourceColumn: OriginAirportKey
+
+	column DestAirportKey
+		dataType: int64
+		isHidden
+		lineageTag: 2a9fad0f-711a-4e6f-bb5f-6792b8b0cc4b
+		summarizeBy: none
+		sourceColumn: DestAirportKey
+
+	column DistanceKm
+		dataType: int64
+		lineageTag: 68be40a8-8299-4b37-b80c-a78f0603910d
+		summarizeBy: none
+		sourceColumn: DistanceKm
+
+	column Haul
+		dataType: string
+		lineageTag: 053ac3ff-9e5c-4534-9c79-92c7eb3a594e
+		summarizeBy: none
+		sourceColumn: Haul
+
+	partition DimRoute = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "\DimRoute.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"RouteKey", Int64.Type}, {"Route", type text}, {"Origin", type text}, {"Dest", type text}, {"OriginAirportKey", Int64.Type}, {"DestAirportKey", Int64.Type}, {"DistanceKm", Int64.Type}, {"Haul", type text}}, "en-US")
+				in
+					Typed
+

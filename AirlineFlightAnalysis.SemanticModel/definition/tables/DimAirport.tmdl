@@ -1,0 +1,65 @@
+table DimAirport
+	lineageTag: 4c4b51e1-4213-4b8c-8d3d-2e804aaec8a7
+
+	column AirportKey
+		dataType: int64
+		isHidden
+		lineageTag: 91e67c46-793b-49b8-9b4e-4ec3167a9f32
+		summarizeBy: none
+		sourceColumn: AirportKey
+
+	column AirportCode
+		dataType: string
+		lineageTag: a7ae86a8-d728-46b9-9310-9d6456d69438
+		summarizeBy: none
+		sourceColumn: AirportCode
+
+	column AirportName
+		dataType: string
+		lineageTag: b796ed2c-06b3-4e5b-a90a-24c4c0171df0
+		summarizeBy: none
+		sourceColumn: AirportName
+
+	column City
+		dataType: string
+		lineageTag: 63e8130b-d1ea-491d-8358-66fc2d5121a0
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: 6e82fc0c-4e4a-4180-af82-c61c3385188f
+		summarizeBy: none
+		sourceColumn: State
+
+	column Region
+		dataType: string
+		lineageTag: abd7e139-01c8-498b-991b-1012df521290
+		summarizeBy: none
+		sourceColumn: Region
+
+	column Latitude
+		dataType: double
+		lineageTag: 74716026-98f9-4aea-8ef1-0bd495b72689
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+	column Longitude
+		dataType: double
+		lineageTag: ddd8f107-8c39-4f54-ae2f-53bca9d84647
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+	partition DimAirport = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "\DimAirport.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"AirportKey", Int64.Type}, {"AirportCode", type text}, {"AirportName", type text}, {"City", type text}, {"State", type text}, {"Region", type text}, {"Latitude", type number}, {"Longitude", type number}}, "en-US")
+				in
+					Typed
+

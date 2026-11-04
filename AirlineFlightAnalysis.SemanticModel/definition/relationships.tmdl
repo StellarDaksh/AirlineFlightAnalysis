@@ -1,0 +1,78 @@
+relationship rel_flights_date
+	fromColumn: FactFlights.DateKey
+	toColumn: DimDate.DateKey
+
+relationship rel_flights_airline
+	fromColumn: FactFlights.AirlineKey
+	toColumn: DimAirline.AirlineKey
+
+relationship rel_flights_route
+	fromColumn: FactFlights.RouteKey
+	toColumn: DimRoute.RouteKey
+
+relationship rel_route_origin
+	fromColumn: DimRoute.OriginAirportKey
+	toColumn: DimAirport.AirportKey
+
+relationship rel_route_dest
+	isActive: false
+	fromColumn: DimRoute.DestAirportKey
+	toColumn: DimAirport.AirportKey
+
+relationship 66fe1597-d733-450b-9639-8c9d5e78b82e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFlights.ScheduledDeparture
+	toColumn: LocalDateTable_c3df476e-9361-45d8-ba91-31cf5106095d.Date
+
+relationship cb8fb731-fbea-4aaa-b5ba-67b12dd1d539
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFlights.ActualDeparture
+	toColumn: LocalDateTable_c4f1da77-76bc-4afc-b5b3-e755dbff208b.Date
+
+relationship b6b9d66f-a4db-43b5-a376-2bbec2d353b9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFlights.ScheduledArrival
+	toColumn: LocalDateTable_5356d53d-120b-452f-b35c-d991642fa3ce.Date
+
+relationship b058c93d-3ca9-40c0-831a-664848965371
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactFlights.ActualArrival
+	toColumn: LocalDateTable_ef2ac911-3549-4c11-a56a-42f47009f1f0.Date
+
+relationship 8237c145-d068-40aa-8acd-95bb058603a6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DimDate (2)'.Date
+	toColumn: LocalDateTable_5e47f7d3-9ba7-4fb7-84b7-9a9cb2803cbe.Date
+
+relationship 9520c5af-90b3-46c4-9567-01ac1d2a9c11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FactFlights (2)'.ScheduledDeparture
+	toColumn: LocalDateTable_f0e2ab0b-9d6a-4d7d-b116-a4e8d397450f.Date
+
+relationship 4ed179ea-9935-46b9-bfb2-2b92a893045d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FactFlights (2)'.ActualDeparture
+	toColumn: LocalDateTable_04cdafc8-136e-4445-8592-6f73132249e4.Date
+
+relationship fe1acea7-6fd5-45a1-b58d-35f66001a626
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FactFlights (2)'.ScheduledArrival
+	toColumn: LocalDateTable_d0a8f13c-df6d-40bd-ad72-fe61f30fdaba.Date
+
+relationship 09c072c1-5374-4840-b696-4e24513e24b4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'FactFlights (2)'.ActualArrival
+	toColumn: LocalDateTable_e79892c9-f561-4903-9538-a03196c461a7.Date
+
+relationship AutoDetected_dd31135f-b25a-4109-aed2-244884ea5fc7
+	fromColumn: 'FactFlights (2)'.DateKey
+	toColumn: 'DimDate (2)'.DateKey
+
+relationship AutoDetected_13118793-c466-4971-a1eb-0bfc3eadab10
+	fromColumn: 'FactFlights (2)'.AirlineKey
+	toColumn: 'DimAirline (2)'.AirlineKey
+
+relationship AutoDetected_25b5a302-25ab-4a7c-a50a-89cdbdf25c9d
+	fromColumn: 'FactFlights (2)'.RouteKey
+	toColumn: 'DimRoute (2)'.RouteKey
+

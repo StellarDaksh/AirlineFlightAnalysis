@@ -1,0 +1,84 @@
+table 'DimAirport (2)'
+	lineageTag: 25d8c8cf-00da-44ba-a7f0-2233a383c831
+
+	column AirportKey
+		dataType: int64
+		formatString: 0
+		lineageTag: cda38f95-50fc-4966-a063-e47455ac6177
+		summarizeBy: count
+		sourceColumn: AirportKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirportCode
+		dataType: string
+		lineageTag: e9397a00-8de0-4f0e-9499-8fca7e5e1611
+		summarizeBy: none
+		sourceColumn: AirportCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirportName
+		dataType: string
+		lineageTag: 06cfa8d1-f0f2-4bae-971a-a2c8b0f85349
+		summarizeBy: none
+		sourceColumn: AirportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 7b8e4761-05da-4186-bf8b-f74a0ccd13a1
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 3d5b7bbf-3274-4ec3-9a9e-4b658d34db85
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 54d01808-deef-4218-9012-08ddbeb756d6
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 9b4e3839-17e8-418a-bf88-b0d6a7911908
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: 49275750-dc16-4a13-8e9a-124d2fbcef9e
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DimAirport (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP\AirlineFlightAnalysis\Data\DimAirport.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AirportKey", Int64.Type}, {"AirportCode", type text}, {"AirportName", type text}, {"City", type text}, {"State", type text}, {"Region", type text}, {"Latitude", type number}, {"Longitude", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

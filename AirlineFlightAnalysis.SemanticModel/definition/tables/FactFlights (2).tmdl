@@ -1,0 +1,211 @@
+table 'FactFlights (2)'
+	lineageTag: cc9030d4-c7f0-4085-85c2-550ba2773c3f
+
+	column FlightID
+		dataType: int64
+		formatString: 0
+		lineageTag: d5f73b70-f9de-4f60-a2b4-24a4ac37e438
+		summarizeBy: count
+		sourceColumn: FlightID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f4ea911f-c574-4382-87f0-68c03b936c5b
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlightNumber
+		dataType: string
+		lineageTag: 3f3b6418-949d-405b-913f-874c1326c85e
+		summarizeBy: none
+		sourceColumn: FlightNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: cf673df6-6cbb-4219-9ea4-b7e86518cb80
+		summarizeBy: none
+		sourceColumn: AirlineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column RouteKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 42349ece-1190-486f-856c-daa4314f9e67
+		summarizeBy: none
+		sourceColumn: RouteKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AircraftType
+		dataType: string
+		lineageTag: 920a4af6-1007-4b53-b507-1501e7d00d71
+		summarizeBy: none
+		sourceColumn: AircraftType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledDeparture
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d7371aab-dbec-4778-82f1-ddfb2226570f
+		summarizeBy: none
+		sourceColumn: ScheduledDeparture
+
+		variation Variation
+			isDefault
+			relationship: 9520c5af-90b3-46c4-9567-01ac1d2a9c11
+			defaultHierarchy: LocalDateTable_f0e2ab0b-9d6a-4d7d-b116-a4e8d397450f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualDeparture
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6e19f08e-05e5-4f58-8691-2b6676065153
+		summarizeBy: none
+		sourceColumn: ActualDeparture
+
+		variation Variation
+			isDefault
+			relationship: 4ed179ea-9935-46b9-bfb2-2b92a893045d
+			defaultHierarchy: LocalDateTable_04cdafc8-136e-4445-8592-6f73132249e4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledArrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1b6e40de-4e4f-40d6-beaf-6f0e99cba40f
+		summarizeBy: none
+		sourceColumn: ScheduledArrival
+
+		variation Variation
+			isDefault
+			relationship: fe1acea7-6fd5-45a1-b58d-35f66001a626
+			defaultHierarchy: LocalDateTable_d0a8f13c-df6d-40bd-ad72-fe61f30fdaba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualArrival
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 491cd967-ef92-44dd-a1f4-ab7c08b6831d
+		summarizeBy: none
+		sourceColumn: ActualArrival
+
+		variation Variation
+			isDefault
+			relationship: 09c072c1-5374-4840-b696-4e24513e24b4
+			defaultHierarchy: LocalDateTable_e79892c9-f561-4903-9538-a03196c461a7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartureDelayMin
+		dataType: int64
+		formatString: 0
+		lineageTag: 67f65c67-03bb-4032-b4ad-e7f0bda0c9ab
+		summarizeBy: sum
+		sourceColumn: DepartureDelayMin
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArrivalDelayMin
+		dataType: int64
+		formatString: 0
+		lineageTag: b99237c3-4702-487e-8dae-60e8e878330f
+		summarizeBy: sum
+		sourceColumn: ArrivalDelayMin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancelled
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c998205-5e05-43fb-9fcf-e502188e054d
+		summarizeBy: sum
+		sourceColumn: Cancelled
+
+		annotation SummarizationSetBy = Automatic
+
+	column DelayCause
+		dataType: string
+		lineageTag: a26bf49f-8f83-4b3e-9d21-48aed49275e8
+		summarizeBy: none
+		sourceColumn: DelayCause
+
+		annotation SummarizationSetBy = Automatic
+
+	column CancelReason
+		dataType: string
+		lineageTag: 32533533-2ce8-41be-b4a5-0e56d74ce0b7
+		summarizeBy: none
+		sourceColumn: CancelReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeatsAvailable
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f0f33c8-f6ef-4842-963f-6b428aa06ab7
+		summarizeBy: sum
+		sourceColumn: SeatsAvailable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passengers
+		dataType: int64
+		formatString: 0
+		lineageTag: 84b2da90-da19-4fd9-880b-8492306e21ab
+		summarizeBy: sum
+		sourceColumn: Passengers
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvgFareINR
+		dataType: int64
+		formatString: 0
+		lineageTag: 618d8960-e34b-4368-94a9-850f8bc77dff
+		summarizeBy: sum
+		sourceColumn: AvgFareINR
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevenueINR
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b73f082-52e0-4c32-8e65-6ac644b03047
+		summarizeBy: sum
+		sourceColumn: RevenueINR
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaggageKg
+		dataType: int64
+		formatString: 0
+		lineageTag: 4118fc41-6de0-467c-b2d4-63b0c1dab004
+		summarizeBy: sum
+		sourceColumn: BaggageKg
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FactFlights (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP\AirlineFlightAnalysis\Data\FactFlights.csv"),[Delimiter=",", Columns=20, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"FlightID", Int64.Type}, {"DateKey", Int64.Type}, {"FlightNumber", type text}, {"AirlineKey", Int64.Type}, {"RouteKey", Int64.Type}, {"AircraftType", type text}, {"ScheduledDeparture", type datetime}, {"ActualDeparture", type datetime}, {"ScheduledArrival", type datetime}, {"ActualArrival", type datetime}, {"DepartureDelayMin", Int64.Type}, {"ArrivalDelayMin", Int64.Type}, {"Cancelled", Int64.Type}, {"DelayCause", type text}, {"CancelReason", type text}, {"SeatsAvailable", Int64.Type}, {"Passengers", Int64.Type}, {"AvgFareINR", Int64.Type}, {"RevenueINR", Int64.Type}, {"BaggageKg", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

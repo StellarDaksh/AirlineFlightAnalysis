@@ -1,0 +1,83 @@
+table 'DimRoute (2)'
+	lineageTag: 8d08f06e-60a2-46e8-95f4-c931fbe52174
+
+	column RouteKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d259595a-e57e-44e0-9ae7-6ad9fc971685
+		summarizeBy: none
+		sourceColumn: RouteKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Route
+		dataType: string
+		lineageTag: b3feae02-1152-4977-aa28-a9b8419eac78
+		summarizeBy: none
+		sourceColumn: Route
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: string
+		lineageTag: e753c184-d3ea-4b8f-89de-bc979db22651
+		summarizeBy: none
+		sourceColumn: Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dest
+		dataType: string
+		lineageTag: e91dc53e-5615-4acb-b6cb-2730d7ecf488
+		summarizeBy: none
+		sourceColumn: Dest
+
+		annotation SummarizationSetBy = Automatic
+
+	column OriginAirportKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 40b20cda-29e1-43fb-a394-e5eb99bfcf74
+		summarizeBy: none
+		sourceColumn: OriginAirportKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestAirportKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c06aebb-adcd-469b-bdae-89748f762069
+		summarizeBy: none
+		sourceColumn: DestAirportKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistanceKm
+		dataType: int64
+		formatString: 0
+		lineageTag: aa7f18a5-d584-4de9-955c-443a2f53830a
+		summarizeBy: none
+		sourceColumn: DistanceKm
+
+		annotation SummarizationSetBy = Automatic
+
+	column Haul
+		dataType: string
+		lineageTag: e7976b1e-0571-42e1-b947-771733c9f59e
+		summarizeBy: none
+		sourceColumn: Haul
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DimRoute (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP\AirlineFlightAnalysis\Data\DimRoute.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"RouteKey", Int64.Type}, {"Route", type text}, {"Origin", type text}, {"Dest", type text}, {"OriginAirportKey", Int64.Type}, {"DestAirportKey", Int64.Type}, {"DistanceKm", Int64.Type}, {"Haul", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

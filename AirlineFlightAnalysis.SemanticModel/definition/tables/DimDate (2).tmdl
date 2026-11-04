@@ -1,0 +1,108 @@
+table 'DimDate (2)'
+	lineageTag: 2fdb17ca-1ce1-4ec3-8601-7e621bd6f9c3
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ae216a0-2af9-4b6e-83cd-584e8f9ef80d
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cc98472d-8b59-4542-8855-0ff42f624f5d
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 8237c145-d068-40aa-8acd-95bb058603a6
+			defaultHierarchy: LocalDateTable_5e47f7d3-9ba7-4fb7-84b7-9a9cb2803cbe.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: a9357a21-119c-413f-b3bc-41d59cbf021e
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 6178124b-3ade-45f9-8d41-02e1b65e4512
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: fd159745-a2f2-4f11-8de6-d119ea4dbae2
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 5d5843fe-e359-401f-87fa-b86f83118f00
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: string
+		lineageTag: 904d4a1b-a864-41c2-a2cc-3b132ef967bd
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 4061c30d-4142-46a2-9703-305603ea7609
+		summarizeBy: sum
+		sourceColumn: DayNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: int64
+		formatString: 0
+		lineageTag: a418c1ad-6909-4e74-838b-137c3342a28b
+		summarizeBy: sum
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: 4d11c60e-b612-4089-b31f-1a88e66fc4e1
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DimDate (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP\AirlineFlightAnalysis\Data\DimDate.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DateKey", Int64.Type}, {"Date", type date}, {"Year", Int64.Type}, {"Quarter", type text}, {"MonthNum", Int64.Type}, {"Month", type text}, {"DayOfWeek", type text}, {"DayNum", Int64.Type}, {"IsWeekend", Int64.Type}, {"Season", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

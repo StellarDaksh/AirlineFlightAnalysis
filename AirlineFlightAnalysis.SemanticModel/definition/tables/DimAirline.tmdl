@@ -1,0 +1,38 @@
+table DimAirline
+	lineageTag: 41260a5e-16c2-4f6e-b184-a0870382bb15
+
+	column AirlineKey
+		dataType: int64
+		isHidden
+		lineageTag: 69f6aa72-693a-4909-b407-f7c16183f87b
+		summarizeBy: none
+		sourceColumn: AirlineKey
+
+	column AirlineCode
+		dataType: string
+		lineageTag: ae6127b9-c386-49f0-a0c3-95719a030536
+		summarizeBy: none
+		sourceColumn: AirlineCode
+
+	column AirlineName
+		dataType: string
+		lineageTag: a07d2774-49d6-4a8c-a182-67769931fe9f
+		summarizeBy: none
+		sourceColumn: AirlineName
+
+	column AirlineType
+		dataType: string
+		lineageTag: 73de331f-396f-47b7-9edd-dc96a8eee0b0
+		summarizeBy: none
+		sourceColumn: AirlineType
+
+	partition DimAirline = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "\DimAirline.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"AirlineKey", Int64.Type}, {"AirlineCode", type text}, {"AirlineName", type text}, {"AirlineType", type text}}, "en-US")
+				in
+					Typed
+

@@ -1,0 +1,128 @@
+table _Measures
+	lineageTag: 610ed4a1-4e0e-4b05-8d88-fe8d500f9870
+
+	measure 'Total Flights' = COUNTROWS(FactFlights)
+		formatString: #,0
+		lineageTag: f8a596a4-37bc-4b8e-bbb8-9c5ed0b5406d
+
+	measure 'Operated Flights' = CALCULATE([Total Flights], FactFlights[Cancelled] = 0)
+		formatString: #,0
+		lineageTag: 0c9dc012-84ee-4d20-944b-7dee29e41b78
+
+	measure 'Cancelled Flights' = CALCULATE([Total Flights], FactFlights[Cancelled] = 1)
+		formatString: #,0
+		lineageTag: 660b4a40-7795-4b31-be2f-477abe5995ea
+
+	measure 'Cancellation Rate' = DIVIDE([Cancelled Flights], [Total Flights])
+		formatString: 0.0%
+		lineageTag: f8fde57d-13b0-4409-baf1-77f851e7c98a
+
+	measure 'Total Passengers' = SUM(FactFlights[Passengers])
+		formatString: #,0
+		lineageTag: b057fbfd-ecb7-496d-b7c8-7d8f238b4722
+
+	measure 'Seats Available' = CALCULATE(SUM(FactFlights[SeatsAvailable]), FactFlights[Cancelled] = 0)
+		formatString: #,0
+		lineageTag: 0b5d5bd2-37b1-4e73-976e-211fe2351fcd
+
+	measure 'Load Factor %' = DIVIDE([Total Passengers], [Seats Available])
+		formatString: 0.0%
+		lineageTag: 2ba8153e-24b1-44fc-8340-8b366d78887e
+
+	measure 'Avg Pax per Flight' = DIVIDE([Total Passengers], [Operated Flights])
+		formatString: 0.0
+		lineageTag: e31b8008-0dd0-464d-af8d-7d670bdfd8fb
+
+	measure 'Avg Departure Delay' = CALCULATE(AVERAGE(FactFlights[DepartureDelayMin]), FactFlights[Cancelled] = 0)
+		formatString: 0.0
+		lineageTag: 13fb0da8-51d5-4fa8-8be5-c0fe0a086616
+
+	measure 'Avg Arrival Delay' = CALCULATE(AVERAGE(FactFlights[ArrivalDelayMin]), FactFlights[Cancelled] = 0)
+		formatString: 0.0
+		lineageTag: 1358f9fc-efea-412f-837b-212cb1238c65
+
+	measure 'Delayed Flights (15+)' = CALCULATE([Total Flights], FactFlights[Cancelled] = 0, FactFlights[ArrivalDelayMin] > 15)
+		formatString: #,0
+		lineageTag: 389a4afd-19aa-4a4e-ab70-8fa6fb02d289
+
+	measure 'Delayed Departures (15+)' = CALCULATE([Total Flights], FactFlights[Cancelled] = 0, FactFlights[DepartureDelayMin] > 15)
+		formatString: #,0
+		lineageTag: db30eb31-bb85-4a70-9928-bcbce9135930
+
+	measure 'Delay Rate %' = DIVIDE([Delayed Flights (15+)], [Operated Flights])
+		formatString: 0.0%
+		lineageTag: 1e25afa4-002d-46ff-a576-89bec954b08c
+
+	measure 'On-Time Performance %' = 1 - [Delay Rate %]
+		formatString: 0.0%
+		lineageTag: 87c4e42d-7210-49c5-bb28-f609d5d91654
+
+	measure 'Total Delay Minutes' = SUMX(FILTER(FactFlights, FactFlights[Cancelled] = 0), MAX(FactFlights[ArrivalDelayMin], 0))
+		formatString: #,0
+		lineageTag: cfe64b56-cbe8-4f57-8ad5-53c5741b6e91
+
+	measure 'Passenger Delay Minutes' = SUMX(FILTER(FactFlights, FactFlights[Cancelled] = 0), MAX(FactFlights[ArrivalDelayMin], 0) * FactFlights[Passengers])
+		formatString: #,0
+		lineageTag: 3114a5ad-ea5d-4260-aef0-e40a46b95b8e
+
+	measure 'Total Revenue (INR)' = SUM(FactFlights[RevenueINR])
+		formatString: #,0
+		lineageTag: 990d1c4e-141d-48dd-bc43-6d6c4a3003ac
+
+	measure 'Revenue per Passenger' = DIVIDE([Total Revenue (INR)], [Total Passengers])
+		formatString: #,0
+		lineageTag: b8c2442a-07bf-4197-b729-9eed3882f2ef
+
+	measure 'Avg Fare' = AVERAGE(FactFlights[AvgFareINR])
+		formatString: #,0
+		lineageTag: 9133c306-6b8a-4e63-9e7a-22c41bfa3501
+
+	measure 'Avg Distance (km)' = AVERAGE(DimRoute[DistanceKm])
+		formatString: #,0
+		lineageTag: 7eec20cb-67e1-440a-86c5-5bde24bf0b31
+
+	measure 'Revenue per Km' = DIVIDE([Total Revenue (INR)], SUMX(FILTER(FactFlights, FactFlights[Cancelled] = 0), RELATED(DimRoute[DistanceKm])))
+		formatString: #,0.00
+		lineageTag: fdb43164-2aae-401f-9368-528c103d676d
+
+	measure 'Passengers PM' = CALCULATE([Total Passengers], DATEADD(DimDate[Date], -1, MONTH))
+		formatString: #,0
+		lineageTag: 3a936f64-d6bc-4e26-bbe2-beca6e123870
+
+	measure 'Passengers MoM %' = DIVIDE([Total Passengers] - [Passengers PM], [Passengers PM])
+		formatString: 0.0%
+		lineageTag: e3de7b88-3f31-4d4a-8628-d8ac0c7b358d
+
+	measure 'OTP PM' = CALCULATE([On-Time Performance %], DATEADD(DimDate[Date], -1, MONTH))
+		formatString: 0.0%
+		lineageTag: 66df110f-d6ee-41b0-b8ed-eea6c1ac9b1a
+
+	measure 'OTP Change' = [On-Time Performance %] - [OTP PM]
+		formatString: 0.0%
+		lineageTag: 3b2aebc9-efae-4cdd-a3a7-a3d1fbca71cf
+
+	measure 'Route Rank by Pax' = RANKX(ALL(DimRoute[Route]), [Total Passengers], , DESC, DENSE)
+		formatString: 0
+		lineageTag: 8b9df005-2a3b-42e1-aed7-ec897215b482
+
+	measure 'Worst Cause' = VAR t = FILTER(ADDCOLUMNS(VALUES(FactFlights[DelayCause]), "@n", CALCULATE(COUNTROWS(FactFlights))), FactFlights[DelayCause] <> "None") RETURN MAXX(TOPN(1, t, [@n], DESC), FactFlights[DelayCause])
+		lineageTag: e184e15e-d44a-4b42-bbb7-a33c969d7995
+
+	measure 'OTP Status' = IF([On-Time Performance %] >= 0.8, "Good", IF([On-Time Performance %] >= 0.7, "Watch", "Poor"))
+		lineageTag: 9e4ed7ae-2424-4668-a958-0c5a094bde52
+
+	column Dummy
+		dataType: int64
+		isHidden
+		lineageTag: 627228bf-4005-4d5a-9d5d-f8fc02ab7247
+		summarizeBy: none
+		sourceColumn: Dummy
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+					Source = #table(type table [Dummy = Int64.Type], {{1}})
+				in
+					Source
+

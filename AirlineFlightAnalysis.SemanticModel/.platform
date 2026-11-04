@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "AirlineFlightAnalysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a5cc8de7-68f8-449d-b64a-e2ec94725805"
+  }
+}

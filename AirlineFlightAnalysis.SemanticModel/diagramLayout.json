@@ -1,0 +1,171 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1147.7377896482171,
+            "y": 196.15682398187857
+          },
+          "nodeIndex": "_Measures",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 200.3618424282069,
+            "y": -50
+          },
+          "nodeIndex": "DimAirline",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 913.73778964821713,
+            "y": 314.72415932479555
+          },
+          "nodeIndex": "DimAirport",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 342.31364796375703
+          },
+          "nodeIndex": "DimDate",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 628.23224839070735,
+            "y": 81.716340878180517
+          },
+          "nodeIndex": "DimRoute",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 339.90214436071852,
+            "y": 181.99273078084059
+          },
+          "nodeIndex": "FactFlights",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1431.7377896482171,
+            "y": 258.15682398187857
+          },
+          "nodeIndex": "QnA",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1665.7377896482171,
+            "y": 258.15682398187852
+          },
+          "nodeIndex": "DimAirline (2)",
+          "nodeLineageTag": "61dd25fe-31a9-4a3d-94e1-1c4b0125a657",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1899.7377896482171,
+            "y": 210.15682398187852
+          },
+          "nodeIndex": "DimAirport (2)",
+          "nodeLineageTag": "25d8c8cf-00da-44ba-a7f0-2233a383c831",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2133.7377896482171,
+            "y": 196.15682398187852
+          },
+          "nodeIndex": "DimDate (2)",
+          "nodeLineageTag": "2fdb17ca-1ce1-4ec3-8601-7e621bd6f9c3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2367.7377896482171,
+            "y": 210.15682398187852
+          },
+          "nodeIndex": "DimRoute (2)",
+          "nodeLineageTag": "8d08f06e-60a2-46e8-95f4-c931fbe52174",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2601.7377896482171,
+            "y": 196.15682398187852
+          },
+          "nodeIndex": "FactFlights (2)",
+          "nodeLineageTag": "cc9030d4-c7f0-4085-85c2-550ba2773c3f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,48 @@
+table 'DimAirline (2)'
+	lineageTag: 61dd25fe-31a9-4a3d-94e1-1c4b0125a657
+
+	column AirlineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 67a25145-0e11-409d-8d6f-6cd46a84fae2
+		summarizeBy: none
+		sourceColumn: AirlineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineCode
+		dataType: string
+		lineageTag: 16a4c8cc-e730-4a1b-9d44-f3ebde05abba
+		summarizeBy: none
+		sourceColumn: AirlineCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineName
+		dataType: string
+		lineageTag: 13b87f72-34fb-4dde-b110-e20259af0a52
+		summarizeBy: none
+		sourceColumn: AirlineName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineType
+		dataType: string
+		lineageTag: 7a0aec96-cc82-4253-8e15-6d4f0de74843
+		summarizeBy: none
+		sourceColumn: AirlineType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DimAirline (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP\AirlineFlightAnalysis\Data\DimAirline.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AirlineKey", Int64.Type}, {"AirlineCode", type text}, {"AirlineName", type text}, {"AirlineType", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

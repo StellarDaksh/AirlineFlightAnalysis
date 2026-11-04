@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "AirlineFlightAnalysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6c9f9797-10ef-477e-8eef-a9b316a73f0b"
+  }
+}

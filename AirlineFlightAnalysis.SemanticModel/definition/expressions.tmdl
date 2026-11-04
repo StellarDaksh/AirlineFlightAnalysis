@@ -1,0 +1,5 @@
+expression DataFolder = "C:\Users\Daksh Sharma\Downloads\Airline_Flight_Analysis_PBIP (1)\AirlineFlightAnalysis\Data" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2e6a0da7-908e-479b-a2d0-845ed550cf4d
+
+	annotation PBI_ResultType = Text
+

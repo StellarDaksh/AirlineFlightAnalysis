@@ -1,0 +1,138 @@
+No,Section,Question,Answer
+1,01. Time / Date Analysis,Which month had the highest number of passengers?,"May with 945,490 passengers."
+2,01. Time / Date Analysis,Which month had the lowest number of passengers?,"Sep with 645,592 passengers."
+3,01. Time / Date Analysis,Which month generated the highest revenue?,May with Rs 667 crore.
+4,01. Time / Date Analysis,Which month generated the lowest revenue?,Sep with Rs 406 crore.
+5,01. Time / Date Analysis,Which month had the highest number of flights?,"Dec with 5,889 scheduled flights; the lowest was Sep (4,151)."
+6,01. Time / Date Analysis,Which quarter generated the highest revenue?,"Q4 with Rs 1,883 crore (30.1% of the year)."
+7,01. Time / Date Analysis,Which quarter had the lowest on-time performance?,Q3 at 62.7%; the best was Q2 at 78.3%.
+8,01. Time / Date Analysis,Which year had the highest passengers or growth?,"The data covers only 2025, so there is no year-on-year comparison. Add more years to the data to enable it."
+9,01. Time / Date Analysis,What is the monthly passenger trend?,"Passengers range from 645,592 (Sep) to 945,490 (May). Peaks fall in May, Dec, Oct; lowest months are Sep, Feb, Aug."
+10,01. Time / Date Analysis,Which month had the highest average fare?,"Oct at Rs 6,886; the lowest was Jan at Rs 6,069."
+11,01. Time / Date Analysis,Are passenger numbers increasing or decreasing over time?,"Broadly stable with strong seasonality, not a steady rise or fall. H1 carried 4,711,512 passengers vs 4,721,739 in H2 (+0.2%)."
+12,01. Time / Date Analysis,Which month showed the highest month-on-month growth?,Oct (+39.3% vs the previous month).
+13,01. Time / Date Analysis,Which month showed the largest month-on-month decline?,Jun (-14.7% vs the previous month).
+14,01. Time / Date Analysis,What percentage of annual passengers came from the best month?,10.0% came from May (an even split would be 8.3%).
+15,01. Time / Date Analysis,Which month had the best and worst on-time performance?,Best: Jun (78.9%). Worst: Sep (61.9%).
+16,01. Time / Date Analysis,Which month had the highest cancellation rate?,Jul at 2.48%; the lowest was Jun at 1.01%.
+17,02. Route Analysis,Which route generated the highest revenue?,DEL-BLR with Rs 192 crore.
+18,02. Route Analysis,Which route generated the lowest revenue?,GAU-CCU with Rs 823.8 lakh.
+19,02. Route Analysis,Which route carried the most passengers?,"DEL-BLR with 215,639 passengers."
+20,02. Route Analysis,Which route carried the fewest passengers?,"GAU-CCU with 20,169 passengers."
+21,02. Route Analysis,Which route has the most flights?,"BOM-DEL with 1,311 operated flights."
+22,02. Route Analysis,Which route has the highest load factor? (routes with 100+ flights),HYD-GAU at 87.2%.
+23,02. Route Analysis,Which route has the lowest load factor? (routes with 100+ flights),PAT-DEL at 84.4%.
+24,02. Route Analysis,Which route has the best on-time performance? (100+ flights),MAA-GAU at 84.7%.
+25,02. Route Analysis,Which route has the worst on-time performance? (100+ flights),DEL-IXC at 61.7%.
+26,02. Route Analysis,Which routes have high traffic but poor punctuality?,"Busy routes (above-median passengers) in the worst 25% for on-time performance: DEL-BLR, BOM-DEL, DEL-BOM, BOM-BLR, BOM-HYD."
+27,02. Route Analysis,Which routes have low traffic but a very high load factor (growth candidates)?,"HYD-GAU, GAU-DEL, BOM-IXC, IXC-BOM, MAA-JAI: below-median passengers but top-quartile load factor, so more frequencies could help."
+28,02. Route Analysis,What are the Top 5 routes by passengers?,"DEL-BLR (215,639); BLR-DEL (210,942); BOM-DEL (201,660); DEL-BOM (193,172); BLR-BOM (190,229)."
+29,02. Route Analysis,What are the Bottom 5 routes by load factor? (100+ flights),PAT-DEL (84.4%); CCU-PAT (84.4%); PNQ-GOI (84.5%); IXC-BLR (84.8%); JAI-AMD (84.8%).
+30,02. Route Analysis,Which routes should be promoted or given more frequencies?,"Candidates with high load factor and good on-time performance: HYD-GAU, MAA-AMD, GAU-DEL, MAA-JAI, HYD-IXC."
+31,02. Route Analysis,"Do short, medium or long routes carry the most passengers?","Medium haul carries the most (4,825,311 passengers, 51.2%). Load factor: Long 85.9%, Medium 85.8%, Short 85.5%."
+32,03. Airline Analysis,Which airline operates the most flights?,"IndiGo with 25,578 scheduled flights (42.8% share)."
+33,03. Airline Analysis,Which airline carries the most passengers?,"IndiGo with 3,710,301 passengers (39.3%)."
+34,03. Airline Analysis,Which airline generates the highest revenue?,"Air India with Rs 2,421 crore."
+35,03. Airline Analysis,Which airline has the best on-time performance?,Akasa Air at 86.3%.
+36,03. Airline Analysis,Which airline has the worst on-time performance?,SpiceJet at 58.8%.
+37,03. Airline Analysis,Which airline has the highest cancellation rate?,Alliance Air at 1.69%; the lowest is Akasa Air at 1.00%.
+38,03. Airline Analysis,Which airline has the highest load factor?,Air India at 86.0%; the lowest is Alliance Air at 70.7%.
+39,03. Airline Analysis,Which airline has the highest average fare?,"Air India at Rs 8,004; the lowest is Alliance Air at Rs 4,953."
+40,03. Airline Analysis,Which airline has the highest revenue per flight?,Air India at Rs 15.3 lakh per flight.
+41,03. Airline Analysis,Which airline caused the most total delay minutes?,"Air India with 286,222 minutes of arrival delay."
+42,03. Airline Analysis,Which airline has the highest average arrival delay?,SpiceJet at 19.1 min; the lowest is Akasa Air at 2.7 min.
+43,03. Airline Analysis,"How do low-cost, full-service and regional airlines compare?","Full-service: OTP 66.1%, load factor 86.0%, avg fare Rs 8,004; Low-cost: OTP 76.7%, load factor 85.9%, avg fare Rs 5,914; Regional: OTP 63.3%, load factor 70.7%, avg fare Rs 4,953."
+44,03. Airline Analysis,What share of passengers is carried by the top 2 airlines?,"71.4% (IndiGo, Air India)."
+45,04. Airport & Regional Analysis,Which origin airport (city) handles the most departures?,"Delhi with 8,331 departures; the quietest is Patna (1,254)."
+46,04. Airport & Regional Analysis,Which origin city generates the highest revenue?,Delhi with Rs 973 crore.
+47,04. Airport & Regional Analysis,Which destination city receives the most passengers?,"Delhi with 1,360,173 arriving passengers."
+48,04. Airport & Regional Analysis,Which origin airport has the worst departure punctuality?,Delhi: 41.5% of departures leave 15+ min late (avg departure delay 21.6 min).
+49,04. Airport & Regional Analysis,Which origin airport has the best departure punctuality?,Hyderabad: only 26.1% of departures are 15+ min late.
+50,04. Airport & Regional Analysis,Which region carries the most passengers?,"South (3,478,098 passengers, 36.9% of departures)."
+51,04. Airport & Regional Analysis,Which region has the best and worst on-time performance?,Best: South (77.2%). Worst: North (67.8%).
+52,04. Airport & Regional Analysis,Which region has the highest average fare?,"East at Rs 7,710."
+53,04. Airport & Regional Analysis,Which region has the highest revenue per flight?,East at Rs 13.0 lakh.
+54,04. Airport & Regional Analysis,Which state has the most departures and which has the fewest?,"Most: Maharashtra (10,211). Fewest: Bihar (1,254)."
+55,04. Airport & Regional Analysis,Which airports perform below the network average on-time performance?,"Network average is 73.4%. Below it (by arrival punctuality of flights departing from them): Delhi, Mumbai, Lucknow, Patna, Chandigarh, Jaipur, Kolkata."
+56,04. Airport & Regional Analysis,Which airports should receive more operational attention?,Delhi and Mumbai: highest share of late departures and large traffic volumes affect the whole network.
+57,05. Overview / Revenue Analysis,What is the total number of flights (scheduled and operated)?,"59,793 scheduled; 58,952 operated; 841 cancelled."
+58,05. Overview / Revenue Analysis,What is the total number of passengers?,"9,433,251 passengers."
+59,05. Overview / Revenue Analysis,What is the total revenue?,"Rs 6,251 crore."
+60,05. Overview / Revenue Analysis,What is the average fare per passenger?,"Rs 6,627 (weighted by passengers)."
+61,05. Overview / Revenue Analysis,What is the average revenue per flight?,Rs 10.6 lakh.
+62,05. Overview / Revenue Analysis,Which day had the highest passenger count?,"21 Nov 2025 with 36,406 passengers."
+63,05. Overview / Revenue Analysis,Which day had the lowest passenger count?,"09 Aug 2025 with 16,430 passengers."
+64,05. Overview / Revenue Analysis,Which weekday is busiest?,"Sun (1,500,381 passengers); the quietest is Tue (1,276,240)."
+65,05. Overview / Revenue Analysis,Which aircraft type contributes the most revenue?,A320neo (28.2% of revenue).
+66,05. Overview / Revenue Analysis,What percentage of passengers is on the Top 5 routes?,10.7%.
+67,05. Overview / Revenue Analysis,Which sales channel or payment method is best?,Not available: this dataset has no sales-channel or payment-method field.
+68,06. Revenue Efficiency (profit proxy),Is profit available in this data?,"No. The data has revenue but no cost, so profit is not calculated. Revenue per km, revenue per flight and load factor are used as efficiency measures instead."
+69,06. Revenue Efficiency (profit proxy),Which route earns the most revenue per km flown?,"JAI-DEL at Rs 2,148 per km (flights x distance basis)."
+70,06. Revenue Efficiency (profit proxy),Which route earns the least revenue per km flown?,GAU-BOM at Rs 844 per km.
+71,06. Revenue Efficiency (profit proxy),Which routes have high passenger numbers but low revenue per flight?,"Among the busiest 25% of routes by passengers, the lowest revenue per flight are: BLR-MAA, MAA-BLR, GOI-BOM, BOM-AMD, AMD-BOM."
+72,06. Revenue Efficiency (profit proxy),Which month had the highest revenue per flight?,Oct at Rs 11.6 lakh; the lowest was Aug at Rs 9.8 lakh.
+73,06. Revenue Efficiency (profit proxy),Which airline earns the most per seat flown (revenue per seat)?,"Air India at Rs 6,895 per available seat; the lowest is Alliance Air at Rs 3,505."
+74,06. Revenue Efficiency (profit proxy),What is the overall load factor?,85.8% of available seats were filled.
+75,06. Revenue Efficiency (profit proxy),How much revenue is lost to cancellations (estimate)?,About 841 flights were cancelled. At the average revenue per operated flight (Rs 10.6 lakh) that is roughly Rs 89 crore of unrealised revenue.
+76,07. Fare Analysis (replaces Discount),Is there discount data in this dataset?,"No. Fare analysis is used instead: average fare by airline, season, haul and route."
+77,07. Fare Analysis (replaces Discount),Which season has the highest average fare?,"Post-Monsoon at Rs 6,862; the lowest is Monsoon at Rs 6,096."
+78,07. Fare Analysis (replaces Discount),Which route has the highest average fare?,"BOM-GAU at Rs 10,219."
+79,07. Fare Analysis (replaces Discount),Which route has the lowest average fare?,"DEL-JAI at Rs 3,008."
+80,07. Fare Analysis (replaces Discount),How does average fare change with haul length?,"Long: Rs 9,115; Medium: Rs 6,863; Short: Rs 3,992."
+81,07. Fare Analysis (replaces Discount),Do higher fares reduce load factor?,Correlation between fare and load factor is +0.07: no meaningful relationship in this data.
+82,07. Fare Analysis (replaces Discount),Which airline has fares well above the network average?,"Network average fare is Rs 6,445. Air India (Rs 8,004) is more than 10% above it."
+83,07. Fare Analysis (replaces Discount),Which low-fare routes still have a high load factor?,"DEL-PNQ, HYD-LKO, DEL-JAI, CCU-LKO, DEL-PAT."
+84,08. Passenger & Capacity Analysis,What is the average number of passengers per flight?,160 passengers per operated flight (average 187 seats).
+85,08. Passenger & Capacity Analysis,Which aircraft type has the highest load factor?,B787-8 at 86.2%; the lowest is ATR 72-600 at 82.1%.
+86,08. Passenger & Capacity Analysis,Which time of day carries the most passengers?,"Morning (3,220,947 passengers, 34.1%)."
+87,08. Passenger & Capacity Analysis,Which weekday has the highest load factor?,Sun at 87.8%; the lowest is Wed at 84.8%.
+88,08. Passenger & Capacity Analysis,Do weekends have a higher load factor than weekdays?,Weekend load factor is 86.5% vs 85.5% on weekdays.
+89,08. Passenger & Capacity Analysis,How much baggage is carried per passenger?,"About 14.0 kg per passenger; total 132,244 tonnes."
+90,08. Passenger & Capacity Analysis,Which months have the highest load factor?,"Oct, Nov, Dec (top: 87.4%); lowest is Jul (84.3%)."
+91,08. Passenger & Capacity Analysis,Are seats available and passengers positively related?,Yes: correlation +0.95 (bigger aircraft carry more passengers).
+92,09. Aircraft Type Comparison,Which aircraft type operates the most flights?,"A320neo with 15,974 flights."
+93,09. Aircraft Type Comparison,Which aircraft type carries the most passengers?,"A321neo with 2,598,204 passengers."
+94,09. Aircraft Type Comparison,Which aircraft type has the best on-time performance?,ATR 72-600 at 75.8%; worst is B787-8 at 65.9%.
+95,09. Aircraft Type Comparison,Which aircraft type earns the highest revenue per flight?,B787-8 at Rs 17.7 lakh.
+96,09. Aircraft Type Comparison,Which aircraft type has the highest average arrival delay?,B787-8 at 15.5 min.
+97,10. Delay & Cancellation Analysis,What is the overall on-time performance?,73.4% of operated flights arrive within 15 minutes of schedule; 26.6% are delayed.
+98,10. Delay & Cancellation Analysis,What is the average departure and arrival delay?,Departure 16.2 min; arrival 10.5 min.
+99,10. Delay & Cancellation Analysis,What is the biggest cause of delays?,"Late Incoming Aircraft (29.7% of departures delayed 15+ min), followed by Weather (24.2%) and Airline Operations (18.5%)."
+100,10. Delay & Cancellation Analysis,Which hour of the day has the worst average departure delay?,17:00 at 23.4 min; the best is 04:00 at 10.4 min.
+101,10. Delay & Cancellation Analysis,Which time of day is most delayed?,Evening (avg departure delay 21.4 min); the best is Night (11.3 min).
+102,10. Delay & Cancellation Analysis,Which weekday has the worst delays?,Tue (17.1 min avg departure delay); the best is Wed (15.6 min).
+103,10. Delay & Cancellation Analysis,How much does the monsoon (Jul-Sep) increase delays?,Average departure delay is 22.5 min in Jul-Sep vs 14.4 min in other months (+56%).
+104,10. Delay & Cancellation Analysis,Does winter fog affect northern airports?,"Yes: Dec-Jan departures from Delhi, Lucknow, Patna, Chandigarh and Jaipur average 33.3 min delay vs 15.4 min elsewhere/other months."
+105,10. Delay & Cancellation Analysis,What percentage of flights are delayed more than 1 hour?,5.4% of operated flights arrive 60+ min late; 0.57% are 3+ hours late.
+106,10. Delay & Cancellation Analysis,What is the cancellation rate and the main reason?,1.41% of flights cancelled. Top reason: Weather (40% of cancellations).
+107,10. Delay & Cancellation Analysis,How many total delay minutes did passengers experience?,"About 2,288,836 passenger-hours of arrival delay in total."
+108,10. Delay & Cancellation Analysis,Which airline-route pair is worst for delays? (100+ flights),SpiceJet on BOM-DEL with 27.6 min average arrival delay.
+109,10. Delay & Cancellation Analysis,What share of delays are caused by the airline itself (Airline Operations + Technical)?,29.5% of delayed departures; these are the controllable part.
+110,11. Relationship / Correlation Questions,Does flight distance affect arrival delay?,Correlation -0.01 (negligible). Use the scatter chart on the Routes page.
+111,11. Relationship / Correlation Questions,Does distance affect fare?,Correlation +0.77 (strong). Longer routes tend to cost more.
+112,11. Relationship / Correlation Questions,Does departure delay carry through to arrival delay?,Correlation +0.98 (strong). Late departures mostly stay late on arrival.
+113,11. Relationship / Correlation Questions,Does load factor affect delays?,Correlation -0.01 (negligible). Fuller flights are not meaningfully slower to depart.
+114,11. Relationship / Correlation Questions,Does distance affect load factor?,Correlation +0.05 (negligible). 
+115,11. Relationship / Correlation Questions,Do seats and revenue move together?,Correlation +0.62 (strong). Bigger aircraft earn more per flight.
+116,11. Relationship / Correlation Questions,Do busier months have more delays?,"No. Monthly passengers vs average arrival delay correlation is -0.47: busier months are, if anything, slightly less delayed. Monsoon and winter weather drive delays more than traffic volume."
+117,11. Relationship / Correlation Questions,Does customer rating or delivery time affect results?,Not available: the dataset has no customer rating or delivery-time field.
+118,12. Top & Bottom Analysis,Top 5 routes by revenue?,DEL-BLR (Rs 192 crore); BLR-DEL (Rs 187 crore); BOM-DEL (Rs 135 crore); DEL-MAA (Rs 130 crore); DEL-BOM (Rs 130 crore).
+119,12. Top & Bottom Analysis,Bottom 5 routes by revenue?,GAU-CCU (Rs 823.8 lakh); PAT-CCU (Rs 825.5 lakh); CCU-PAT (Rs 834.1 lakh); PNQ-GOI (Rs 846.1 lakh); GOI-PNQ (Rs 849.9 lakh).
+120,12. Top & Bottom Analysis,Top 5 routes by on-time performance? (100+ flights),MAA-GAU (84.7%); PNQ-AMD (84.0%); AMD-CCU (83.8%); BLR-GAU (83.6%); GAU-BLR (83.2%).
+121,12. Top & Bottom Analysis,Bottom 5 routes by on-time performance? (100+ flights),DEL-IXC (61.7%); DEL-GAU (62.3%); LKO-HYD (62.8%); DEL-JAI (62.9%); DEL-AMD (63.2%).
+122,12. Top & Bottom Analysis,Top 5 origin cities by passengers?,"Delhi (1,343,560); Bengaluru (1,287,064); Mumbai (1,264,700); Hyderabad (962,665); Kolkata (891,862)."
+123,12. Top & Bottom Analysis,Bottom 5 origin cities by on-time departures?,Delhi (58.5%); Mumbai (61.9%); Patna (62.4%); Lucknow (63.1%); Chandigarh (65.1%).
+124,12. Top & Bottom Analysis,Top 5 months by passengers?,"May (945,490); Dec (939,649); Oct (899,328); Nov (832,618); Jun (806,759)."
+125,12. Top & Bottom Analysis,Bottom 5 months by passengers?,"Sep (645,592); Feb (651,794); Aug (694,318); Jul (710,234); Jan (741,253)."
+126,12. Top & Bottom Analysis,Top airlines by load factor?,Air India (86.04%); Air India Express (86.00%); Akasa Air (85.99%).
+127,12. Top & Bottom Analysis,Top 5 routes by revenue per flight? (100+ flights),GAU-BLR (Rs 18.0 lakh); COK-DEL (Rs 17.9 lakh); DEL-COK (Rs 17.7 lakh); BLR-GAU (Rs 17.7 lakh); MAA-IXC (Rs 17.6 lakh).
+128,13. Manager-Level Questions,Which routes should the company promote?,"HYD-GAU, MAA-AMD, GAU-DEL, MAA-JAI, HYD-IXC: high load factor and good punctuality, so demand and operations both support growth."
+129,13. Manager-Level Questions,Which routes should management reconsider?,"PAT-DEL, CCU-PAT, IXC-BLR, LKO-CCU, BLR-COK: low load factor with below-median punctuality. Consider smaller aircraft or fewer frequencies."
+130,13. Manager-Level Questions,Which region needs improvement?,North has the lowest on-time performance (67.8%); focus on ground handling and schedule buffers there.
+131,13. Manager-Level Questions,Which region should receive more investment?,South carries the most passengers (36.9%); investing in capacity there serves the largest demand base.
+132,13. Manager-Level Questions,Which airline should be benchmarked as the best performer?,"Akasa Air (on-time 86.3%, cancellations 1.00%); SpiceJet is the weakest at 58.8% on-time."
+133,13. Manager-Level Questions,Where is the company losing money?,"Cancellations (~Rs 89 crore of unrealised revenue), low-load-factor routes (PAT-DEL, CCU-PAT, PNQ-GOI), and passenger delay costs, mostly in Sep and evening departures."
+134,13. Manager-Level Questions,What is the biggest opportunity in the data?,"Raising load factor on weak routes and adding frequencies on strong ones (HYD-GAU, MAA-AMD, GAU-DEL); also peak-season pricing since Post-Monsoon fares are highest."
+135,13. Manager-Level Questions,What is the biggest problem in the data?,"Punctuality: 26.6% of flights are delayed, led by Late Incoming Aircraft (29.7% of delays), with worst periods in Sep and evening departures."
+136,13. Manager-Level Questions,What action would you recommend to management?,"Build schedule buffers for evening departures and Sep, improve aircraft turnaround to cut late-incoming-aircraft delays, and review the weakest routes."
+137,13. Manager-Level Questions,"If you were the manager, what 3 decisions would you make from this dashboard?","1) Add buffer time and ground staff in the evening peak and at Delhi. 2) Add frequencies on HYD-GAU and MAA-AMD, and trim low-load routes. 3) Prepare a winter-fog and monsoon contingency plan (spare aircraft, crew standby) for north-India airports."

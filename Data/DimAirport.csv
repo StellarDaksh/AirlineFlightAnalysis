@@ -1,0 +1,16 @@
+AirportKey,AirportCode,AirportName,City,State,Region,Latitude,Longitude
+1,DEL,Indira Gandhi Intl,Delhi,Delhi,North,28.5562,77.1
+2,BOM,Chhatrapati Shivaji Maharaj Intl,Mumbai,Maharashtra,West,19.0896,72.8656
+3,BLR,Kempegowda Intl,Bengaluru,Karnataka,South,13.1986,77.7066
+4,HYD,Rajiv Gandhi Intl,Hyderabad,Telangana,South,17.2403,78.4294
+5,MAA,Chennai Intl,Chennai,Tamil Nadu,South,12.9941,80.1709
+6,CCU,Netaji Subhas Chandra Bose Intl,Kolkata,West Bengal,East,22.6547,88.4467
+7,AMD,Sardar Vallabhbhai Patel Intl,Ahmedabad,Gujarat,West,23.0772,72.6347
+8,PNQ,Pune Airport,Pune,Maharashtra,West,18.5822,73.9197
+9,GOI,Manohar Intl,Goa,Goa,West,15.713,73.831
+10,JAI,Jaipur Intl,Jaipur,Rajasthan,North,26.8242,75.8122
+11,COK,Cochin Intl,Kochi,Kerala,South,10.152,76.4019
+12,LKO,Chaudhary Charan Singh Intl,Lucknow,Uttar Pradesh,North,26.7606,80.8893
+13,PAT,Jay Prakash Narayan Intl,Patna,Bihar,East,25.5913,85.088
+14,GAU,Lokpriya Gopinath Bordoloi Intl,Guwahati,Assam,East,26.1061,91.5859
+15,IXC,Chandigarh Intl,Chandigarh,Chandigarh,North,30.6735,76.7885

@@ -1,0 +1,195 @@
+table FactFlights
+	lineageTag: 8e8cf53f-b871-4395-b4e7-7325a618adfc
+
+	column FlightID
+		dataType: int64
+		lineageTag: 30908294-4dfa-4f7d-a2db-f4b876d7ac62
+		summarizeBy: count
+		sourceColumn: FlightID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		isHidden
+		lineageTag: a7a7f716-56dc-470b-9f72-8ba73f80e1d6
+		summarizeBy: none
+		sourceColumn: DateKey
+
+	column FlightNumber
+		dataType: string
+		lineageTag: fda83855-35c0-4601-a938-a68697d8ed39
+		summarizeBy: none
+		sourceColumn: FlightNumber
+
+	column AirlineKey
+		dataType: int64
+		isHidden
+		lineageTag: 29c99916-5498-42ec-a985-28a54a9298b4
+		summarizeBy: none
+		sourceColumn: AirlineKey
+
+	column RouteKey
+		dataType: int64
+		isHidden
+		lineageTag: 2b85cf02-e80c-4182-85b4-33e376e9325b
+		summarizeBy: none
+		sourceColumn: RouteKey
+
+	column AircraftType
+		dataType: string
+		lineageTag: b043e7ef-f7d7-427c-8718-581b603456df
+		summarizeBy: none
+		sourceColumn: AircraftType
+
+	column ScheduledDeparture
+		dataType: dateTime
+		formatString: dd-mmm-yyyy hh:nn
+		lineageTag: 54972a7a-81ff-4731-97de-8c8eebda9827
+		summarizeBy: none
+		sourceColumn: ScheduledDeparture
+
+		variation Variation
+			isDefault
+			relationship: 66fe1597-d733-450b-9639-8c9d5e78b82e
+			defaultHierarchy: LocalDateTable_c3df476e-9361-45d8-ba91-31cf5106095d.'Date Hierarchy'
+
+	column ActualDeparture
+		dataType: dateTime
+		formatString: dd-mmm-yyyy hh:nn
+		lineageTag: fc777130-4cf9-40af-ba21-8866d71b17e4
+		summarizeBy: none
+		sourceColumn: ActualDeparture
+
+		variation Variation
+			isDefault
+			relationship: cb8fb731-fbea-4aaa-b5ba-67b12dd1d539
+			defaultHierarchy: LocalDateTable_c4f1da77-76bc-4afc-b5b3-e755dbff208b.'Date Hierarchy'
+
+	column ScheduledArrival
+		dataType: dateTime
+		formatString: dd-mmm-yyyy hh:nn
+		lineageTag: a2c054bf-c334-40af-9032-9199654ce1f5
+		summarizeBy: none
+		sourceColumn: ScheduledArrival
+
+		variation Variation
+			isDefault
+			relationship: b6b9d66f-a4db-43b5-a376-2bbec2d353b9
+			defaultHierarchy: LocalDateTable_5356d53d-120b-452f-b35c-d991642fa3ce.'Date Hierarchy'
+
+	column ActualArrival
+		dataType: dateTime
+		formatString: dd-mmm-yyyy hh:nn
+		lineageTag: b46b2573-9f65-4e9b-a953-5feacac23226
+		summarizeBy: none
+		sourceColumn: ActualArrival
+
+		variation Variation
+			isDefault
+			relationship: b058c93d-3ca9-40c0-831a-664848965371
+			defaultHierarchy: LocalDateTable_ef2ac911-3549-4c11-a56a-42f47009f1f0.'Date Hierarchy'
+
+	column DepartureDelayMin
+		dataType: int64
+		lineageTag: c80c2163-e755-4a5e-bbe0-0651632d0347
+		summarizeBy: sum
+		sourceColumn: DepartureDelayMin
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArrivalDelayMin
+		dataType: int64
+		lineageTag: 74bf78fa-c4bc-494e-8052-b1d617216232
+		summarizeBy: sum
+		sourceColumn: ArrivalDelayMin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancelled
+		dataType: int64
+		lineageTag: 31bb997d-862b-451d-a3b4-54ea994772c7
+		summarizeBy: sum
+		sourceColumn: Cancelled
+
+		annotation SummarizationSetBy = Automatic
+
+	column DelayCause
+		dataType: string
+		lineageTag: bbf59fcc-3ace-4f03-900a-6172d737884f
+		summarizeBy: none
+		sourceColumn: DelayCause
+
+	column CancelReason
+		dataType: string
+		lineageTag: d352ad53-0267-4a4e-b3f9-4c51f6513086
+		summarizeBy: none
+		sourceColumn: CancelReason
+
+	column SeatsAvailable
+		dataType: int64
+		lineageTag: 3e1f0b69-8265-4d70-a3ab-0e32efd544b4
+		summarizeBy: sum
+		sourceColumn: SeatsAvailable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passengers
+		dataType: int64
+		lineageTag: 39e3952c-523e-43f8-9035-87d981f069af
+		summarizeBy: sum
+		sourceColumn: Passengers
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvgFareINR
+		dataType: int64
+		lineageTag: 3230ff41-1042-48fd-a50e-98b238140bb4
+		summarizeBy: sum
+		sourceColumn: AvgFareINR
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevenueINR
+		dataType: int64
+		lineageTag: cb108687-b6a1-4cbf-bbdf-54633b58d5ba
+		summarizeBy: sum
+		sourceColumn: RevenueINR
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaggageKg
+		dataType: int64
+		lineageTag: 5dcf7265-f7fe-42b8-a99f-4b5937c3ba85
+		summarizeBy: sum
+		sourceColumn: BaggageKg
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dep Hour' = HOUR(FactFlights[ScheduledDeparture])
+		dataType: int64
+		lineageTag: e747be4d-2dc5-4a8c-82c7-1f28d211749f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time of Day' = SWITCH(TRUE(), FactFlights[Dep Hour] < 6, "Night", FactFlights[Dep Hour] < 12, "Morning", FactFlights[Dep Hour] < 18, "Afternoon", "Evening")
+		dataType: string
+		lineageTag: 181ca682-bde8-44a5-b578-28b52cd76e0a
+		summarizeBy: none
+
+	column 'Delay Bucket' = SWITCH(TRUE(), FactFlights[Cancelled] = 1, "Cancelled", FactFlights[ArrivalDelayMin] <= 15, "On time", FactFlights[ArrivalDelayMin] <= 60, "15-60 min", FactFlights[ArrivalDelayMin] <= 180, "1-3 hrs", "3+ hrs")
+		dataType: string
+		lineageTag: d38e0e37-a334-4139-a0ac-6a49d1d57000
+		summarizeBy: none
+
+	partition FactFlights = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "\FactFlights.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"FlightID", Int64.Type}, {"DateKey", Int64.Type}, {"FlightNumber", type text}, {"AirlineKey", Int64.Type}, {"RouteKey", Int64.Type}, {"AircraftType", type text}, {"ScheduledDeparture", type datetime}, {"ActualDeparture", type datetime}, {"ScheduledArrival", type datetime}, {"ActualArrival", type datetime}, {"DepartureDelayMin", Int64.Type}, {"ArrivalDelayMin", Int64.Type}, {"Cancelled", Int64.Type}, {"DelayCause", type text}, {"CancelReason", type text}, {"SeatsAvailable", Int64.Type}, {"Passengers", Int64.Type}, {"AvgFareINR", Int64.Type}, {"RevenueINR", Int64.Type}, {"BaggageKg", Int64.Type}}, "en-US")
+				in
+					Typed
+

@@ -1,0 +1,38 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DimDate","DimAirline","DimAirport","DimRoute","FactFlights","QnA","_Measures","DataFolder","DimAirline (2)","DimAirport (2)","DimDate (2)","DimRoute (2)","FactFlights (2)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimDate
+ref table DimAirline
+ref table DimAirport
+ref table DimRoute
+ref table FactFlights
+ref table QnA
+ref table _Measures
+ref table 'DimAirline (2)'
+ref table DateTableTemplate_f38171d2-542a-4279-9941-94cd5388ecc7
+ref table LocalDateTable_c3df476e-9361-45d8-ba91-31cf5106095d
+ref table LocalDateTable_c4f1da77-76bc-4afc-b5b3-e755dbff208b
+ref table LocalDateTable_5356d53d-120b-452f-b35c-d991642fa3ce
+ref table LocalDateTable_ef2ac911-3549-4c11-a56a-42f47009f1f0
+ref table 'DimAirport (2)'
+ref table 'DimDate (2)'
+ref table LocalDateTable_5e47f7d3-9ba7-4fb7-84b7-9a9cb2803cbe
+ref table 'DimRoute (2)'
+ref table 'FactFlights (2)'
+ref table LocalDateTable_f0e2ab0b-9d6a-4d7d-b116-a4e8d397450f
+ref table LocalDateTable_04cdafc8-136e-4445-8592-6f73132249e4
+ref table LocalDateTable_d0a8f13c-df6d-40bd-ad72-fe61f30fdaba
+ref table LocalDateTable_e79892c9-f561-4903-9538-a03196c461a7
+
